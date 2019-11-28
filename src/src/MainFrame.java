@@ -49,7 +49,7 @@ public class MainFrame extends JFrame {
 		
 		JMenuBar menuBar = new JMenuBar();
 		
-		JMenu fileMenu = new JMenu("파일");
+		JMenu fileMenu = new JMenu("사진 인식");
 		
 		JMenuItem loadMenuItem = new JMenuItem("이미지 불러오기");
 		JMenuItem detectMenuItem = new JMenuItem("얼굴 인식");
@@ -58,6 +58,7 @@ public class MainFrame extends JFrame {
 		fileMenu.add(loadMenuItem);
 		fileMenu.add(detectMenuItem);
 		fileMenu.add(exitMenuItem);
+		
 		
 		loadMenuItem.addActionListener(new ActionListener() {
 			
@@ -94,13 +95,25 @@ public class MainFrame extends JFrame {
 			}
 		});
 		
-		JMenu developerMenu = new JMenu("Developer");
+
+		JMenu camMenu = new JMenu("카메라 인식");
+		JMenuItem startCamera = new JMenuItem("시작 하기");
+		
+		startCamera.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
 		JMenu aboutMenu = new JMenu("about");
 		JMenu helpMenu = new JMenu("Help");
 
 		
-		JMenuItem developerItem = new JMenuItem("개발자");
-		developerMenu.add(developerItem);
+		JMenuItem developerItem = new JMenuItem("프로그램 소개");
+		aboutMenu.add(developerItem);
 		
 		developerItem.addActionListener(new ActionListener() {
 			
@@ -112,9 +125,10 @@ public class MainFrame extends JFrame {
 		
 		
 		menuBar.add(fileMenu);
-		menuBar.add(developerMenu);
+		menuBar.add(camMenu);
 		menuBar.add(aboutMenu);
 		menuBar.add(helpMenu);
+		
 		
 		return menuBar;
 	}
@@ -131,7 +145,9 @@ public class MainFrame extends JFrame {
 		
 		
 		JOptionPane.showMessageDialog(null, 
-				"개발자 : 정빈", 
+				"개발자 : 정빈\n"
+				+ "라이센스 : OpenCV - BSD\n"
+				+ "Copyright 2019. JeoungBin. All right reserved", 
 				"OpenCV를 이용한 얼굴인식 AI을 만든 사람은 ?", 
 				JOptionPane.OK_OPTION,  
 				userIcon);
