@@ -32,7 +32,7 @@ public class ImagePanel extends JPanel{
 	}
 	
 	private Image scaleImage(Image image) {
-		return image.getScaledInstance(700, 500, Image.SCALE_SMOOTH);
+		return image.getScaledInstance(750, 550, Image.SCALE_SMOOTH);
 	}
 	
 	public void loadImage(File file) {

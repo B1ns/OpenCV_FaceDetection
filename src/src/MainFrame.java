@@ -75,8 +75,7 @@ public class MainFrame extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				MainFrame.this.faceDetetection
-				
+				MainFrame.this.faceDetetection.detectFaces(MainFrame.this.file, MainFrame.this.iamgePanel);
 			}
 		});
 		

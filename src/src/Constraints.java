@@ -5,10 +5,11 @@ public class Constraints {
 		
 	}
 	
-	public static final String APPLICATION_NAME = "OpenCV¸¦ ÀÌ¿ëÇÑ ¾ó±¼ÀÎ½Ä AI";
-	public static final String EXIT_WARNING = "Á¤¸»·Î Á¾·áÇÏ½Ã°Ú½À´Ï±î ?";
+	public static final String APPLICATION_NAME = "OpenCVë¥¼ ì´ìš©í•œ ì–¼êµ´ì¸ì‹ AI";
+	public static final String EXIT_WARNING = "ì •ë§ë¡œ ì¢…ë£Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ ?";
 	public static final int FRAME_WIDTH = 800;
 	public static final int FARME_HEIGHT = 600;
 	public static final int IAMGE_LABEL_BORDER = 30;
-	public static final String CASCADE_CLASSIFIER ="";
+	public static final String CASCADE_CLASSIFIER =
+			"C:\\Users\\qlsl7\\Desktop\\haarcascade_frontalface_alt.xml";
 }
