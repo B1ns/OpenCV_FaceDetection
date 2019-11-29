@@ -1,8 +1,11 @@
 package src;
 
-public class Constraints {
+public class Constraints extends CameraDetector{
+	
+	CameraDetector cameraDetector = new CameraDetector();
+	
 	private Constraints() {
-		
+		cameraDetector.setCascadeClassifier("C:\\Users\\qlsl7\\Desktop\\haarcascade_frontalface_alt.xml");
 	}
 	
 	public static final String APPLICATION_NAME = "OpenCV를 이용한 얼굴인식 AI";
@@ -12,4 +15,7 @@ public class Constraints {
 	public static final int IAMGE_LABEL_BORDER = 30;
 	public static final String CASCADE_CLASSIFIER =
 			"C:\\Users\\qlsl7\\Desktop\\haarcascade_frontalface_alt.xml";
+	
+	
 }
+

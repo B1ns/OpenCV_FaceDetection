@@ -18,10 +18,16 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+import org.opencv.core.Mat;
+import org.opencv.videoio.VideoCapture;
 
 public class MainFrame extends JFrame {
 
 	private static final long seriaVersionUID = 1L;
+	
 	private ImagePanel iamgePanel;
 	private JFileChooser fileChooser;
 	private FaceDetection faceDetetection;
@@ -45,6 +51,7 @@ public class MainFrame extends JFrame {
 		
 	}
 
+	
 	public JMenuBar createMenuBar() {
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -54,6 +61,7 @@ public class MainFrame extends JFrame {
 		JMenuItem loadMenuItem = new JMenuItem("이미지 불러오기");
 		JMenuItem detectMenuItem = new JMenuItem("얼굴 인식");
 		JMenuItem exitMenuItem = new JMenuItem("종료 하기");
+		JMenuItem override = new JMenuItem("와우", 123);
 		
 		fileMenu.add(loadMenuItem);
 		fileMenu.add(detectMenuItem);
@@ -64,6 +72,7 @@ public class MainFrame extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
 				if(fileChooser.showOpenDialog(MainFrame.this) == JFileChooser.APPROVE_OPTION) {
 					MainFrame.this.file = fileChooser.getSelectedFile();
 					MainFrame.this.iamgePanel.loadImage(MainFrame.this.file);
@@ -98,19 +107,29 @@ public class MainFrame extends JFrame {
 
 		JMenu camMenu = new JMenu("카메라 인식");
 		JMenuItem startCamera = new JMenuItem("시작 하기");
+		camMenu.add(startCamera);
 		
 		startCamera.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				
+				try {
+					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+					
+				} catch (ClassNotFoundException |  InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e2) {
+					e2.printStackTrace();
+				}
+				
+				CameraFrame cameraFrame = new CameraFrame();
+				cameraFrame.displayScreen();
 				
 			}
 		});
 		
 		JMenu aboutMenu = new JMenu("about");
 		JMenu helpMenu = new JMenu("Help");
-
+		
 		
 		JMenuItem developerItem = new JMenuItem("프로그램 소개");
 		aboutMenu.add(developerItem);
@@ -154,7 +173,3 @@ public class MainFrame extends JFrame {
 	}
 	
 }
-
-
-
-
